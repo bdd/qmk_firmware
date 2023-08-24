@@ -1,4 +1,5 @@
 CAPS_WORD_ENABLE = yes
+ENCODER_MAP_ENABLE = yes
 
 # Small image
 LTO_ENABLE = yes

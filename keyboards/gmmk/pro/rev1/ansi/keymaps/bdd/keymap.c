@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [2] = LAYOUT(
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          KC_MEDIA_PLAY_PAUSE,
         _______, RGB_TOG, _______, _______, _______, _______, _______, _______, _______, _______, TO(0)  , _______, _______, KC_DEL ,          TO(1)  ,
         _______, _______, RGB_VAI, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, QK_BOOT,          TO(1)  ,
         KC_ESC , _______, RGB_VAD, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______, _______,          _______,          TO(1)  ,
@@ -53,6 +53,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 // clang-format on
+
+#if defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
+  [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+  [1] = { ENCODER_CCW_CW(_______, _______) },
+  [2] = { ENCODER_CCW_CW(KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK) },
+};
+#endif
 
 #define LED_ARR_END 255
 
